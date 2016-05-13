@@ -23,9 +23,9 @@ $(window).load(function() {
 	// on load
 	
 		if (navigator.platform.toUpperCase().indexOf('WIN')!==-1) {
-			$("#assocEssays .container").css("margin-left", 15);
+			$(".container").css("margin-left", 15);
 		} else {
-			$("#assocEssays .container").css("margin-left", 8);
+			$(".container").css("margin-left", 8);
 		}
 		setupBlocks();
 	
@@ -34,7 +34,7 @@ $(window).load(function() {
 $(document).ready(function () { //doc ready
      if(checkMobile()){
         paddingTop = 15;
-        $("#assocEssays .container").css("margin-left", 15);
+        $(".container").css("margin-left", 15);
      }
      
      setupBlocks();
@@ -66,7 +66,7 @@ $(function(){ // resized window adjust
 });
 
 function setupBlocks() { // get Demensions 
-	windowWidth = $("#assocEssays .container").width();
+	windowWidth = $(".container").width();
 	colWidth = $('.block').outerWidth();
 	blocks = [];
 	colCount = Math.floor(windowWidth/(colWidth+margin*2));
@@ -101,18 +101,8 @@ function positionBlocks() { // set the blocks in place
                 maxHeight= temp;                
         }
         
-        //multi line elipsis if text is too long
-        var $p = $('.essayPrevCont', this);
-		//var divh = $('.essayPrevCont', this).height();
-		while ($p.outerHeight() > 190) {
-			if(!$p.text().match(/\W*\s(\S)*$/)) break;
-		    $p.text(function (index, text) {
-		        return text.replace(/\W*\s(\S)*$/, '...');
-		    });
-		}
-		
 		//set height of container holding the elements
-        $("#assocEssays .container").height(maxHeight + 125);
+        $(".container").height(maxHeight + 125);
         cnt++;        
 	});
    
@@ -132,16 +122,6 @@ function checkMobile(){
     }
     return false;
 }
-
-function getScrollBarWidth () {
-    var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
-        widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
-    $outer.remove();
-    scrollbarWidth = 100 - widthWithScroll;
-    return scrollbarWidth;
-};
-
-
 
 // Function to get the Min value in Array
 Array.min = function(array) {
