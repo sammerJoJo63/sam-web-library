@@ -18,6 +18,7 @@ var blocks = [];
 var paddingTop = 50;
 var timers = [];
 var intCnt = 1;
+/*
 $(window).load(setupBlocks);
 $(window).load(function() { 
 	// on load
@@ -30,18 +31,23 @@ $(window).load(function() {
 		setupBlocks();
 	
 }); 
+*/
 
 $(document).ready(function () { //doc ready
+/*
      if(checkMobile()){
         paddingTop = 15;
         $(".container").css("margin-left", 15);
+*/
      }
      
      setupBlocks();
+/*
     $(".footerBtn").click(function(){
         blocksOnLoad += 15;
         setupBlocks();   
     });
+*/
 	
 });
 
@@ -79,7 +85,7 @@ function setupBlocks() { // get Demensions
 function positionBlocks() { // set the blocks in place
      maxHeight = 1;
      block = $('.block').outerWidth();
-     padding = ($(window).width() - (colCount*(block + margin)))/2; // padding for center
+     padding = ($(".container").width() - (colCount*(block + margin)))/2; // padding for center
      var cnt = 1;
 	 $('.block').each(function(){
         if(cnt >= blocksOnLoad){
