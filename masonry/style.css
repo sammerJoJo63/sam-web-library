@@ -1,0 +1,17 @@
+.skillBox {
+	position: relative;
+	padding: 0 !important;
+}
+
+.block {
+    display: block;
+    position: absolute;
+    background: #fff;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    float: left;
+    text-align: left;
+    width: 200px;
+}
